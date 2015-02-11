@@ -73,6 +73,9 @@
 
 (define-key evil-motion-state-map ":" 'evil-ex)
 
+(define-key evil-motion-state-map "_" 'evil-first-non-blank)
+(define-key evil-motion-state-map "-" 'evil-end-of-line)
+
 ;; C-c as general purpose escape key sequence.
 ;;
 (defun my-esc (prompt)
