@@ -89,3 +89,5 @@
 ;; Not sure what behavior this changes, but might as well set it, seeing the Elisp manual's
 ;; documentation of it.
 ;;(set-quit-char (kbd "C-c"))
+
+(load-theme 'misterioso t)
