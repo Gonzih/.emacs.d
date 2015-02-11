@@ -43,7 +43,7 @@
 
 (evil-leader/set-key " " 'evil-search-highlight-persist-remove-all)
 
-(define-key evil-normal-state-map " " 'helm-mini).
+(define-key evil-normal-state-map " " 'helm-mini)
 
 (require 'powerline)
 (powerline-evil-vim-color-theme)
