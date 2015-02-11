@@ -22,6 +22,8 @@
 (require-package 'rainbow-delimiters)
 (require-package 'clojure-mode)
 (require-package 'color-theme-approximate)
+(require-package 'ruby-mode)
+(require-package 'clojure-mode)
 
 (require 'evil)
 
@@ -75,6 +77,8 @@
 
 (define-key evil-motion-state-map "_" 'evil-first-non-blank)
 (define-key evil-motion-state-map "-" 'evil-end-of-line)
+
+(global-set-key (kbd "C-q") 'execute-extended-command)
 
 ;; C-c as general purpose escape key sequence.
 ;;
