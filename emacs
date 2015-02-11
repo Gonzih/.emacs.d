@@ -24,7 +24,6 @@
 (require-package 'clojure-mode)
 (require-package 'color-theme-approximate)
 (require-package 'ruby-mode)
-(require-package 'clojure-mode)
 (require-package 'autopair)
 (require-package 'gruvbox-theme)
 (require-package 'evil-nerd-commenter)
@@ -161,3 +160,14 @@
 
 (evil-leader/set-key "p" 'helm-projectile-find-file)
 (evil-leader/set-key "-" 'dired)
+(evil-leader/set-key "e" 'lisp-eval-defun)
+
+(define-key evil-normal-state-map (kbd "C-h") 'evil-next-buffer)
+(define-key evil-normal-state-map (kbd "C-t") 'evil-prev-buffer)
+
+(define-key evil-window-map "-" 'split-window-vertically)
+(define-key evil-window-map "\\" 'split-window-vertically)
+
+(defun set-lein-repl ()
+  (setq inferior-lisp-program "lein repl"))
+(add-hook 'emacs-lisp-mode-hook 'set-lein-repl)
