@@ -116,6 +116,9 @@
 (define-key evil-motion-state-map "t" 'evil-previous-line)
 (define-key evil-motion-state-map "n" 'evil-forward-char)
 
+(define-key evil-motion-state-map "k" 'evil-find-char-to)
+(define-key evil-motion-state-map "K" 'evil-find-char-to-backward)
+
 (define-key evil-window-map "d" 'evil-window-left)
 (define-key evil-window-map "D" 'evil-window-move-far-left)
 (define-key evil-window-map "h" 'evil-window-down)
