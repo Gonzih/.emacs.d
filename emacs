@@ -146,3 +146,5 @@
   (kbd "Y") 'evil-paredit-yank-line
   (kbd "X") 'paredit-backward-delete
   (kbd "x") 'paredit-forward-delete)
+
+(define-key evil-normal-state-map "gcc" 'evilnc-comment-or-uncomment-lines)
