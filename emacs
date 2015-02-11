@@ -156,3 +156,4 @@
 (helm-projectile-on)
 
 (evil-leader/set-key "p" 'helm-projectile-find-file)
+(evil-leader/set-key "-" 'dired)
