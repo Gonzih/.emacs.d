@@ -100,3 +100,8 @@
 (load-theme 'misterioso t)
 
 (color-theme-approximate-on)
+
+(setq inhibit-startup-message t)
+(tool-bar-mode -1)
+(menu-bar-mode -99)
+(scroll-bar-mode -1)
