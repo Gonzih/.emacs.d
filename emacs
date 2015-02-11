@@ -26,6 +26,7 @@
 (require-package 'ruby-mode)
 (require-package 'clojure-mode)
 (require-package 'autopair)
+(require-package 'gruvbox-theme)
 
 (require 'evil)
 (evil-mode 1)
@@ -104,7 +105,7 @@
 ;; documentation of it.
 ;;(set-quit-char (kbd "C-c"))
 
-(load-theme 'misterioso t)
+(load-theme 'gruvbox t)
 
 (color-theme-approximate-on)
 
