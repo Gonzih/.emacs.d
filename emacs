@@ -27,6 +27,7 @@
 (require-package 'clojure-mode)
 (require-package 'autopair)
 (require-package 'gruvbox-theme)
+(require-package 'evil-nerd-commenter)
 
 (require 'evil)
 (evil-mode 1)
@@ -41,7 +42,7 @@
 (setq evil-operator-state-cursor '("red" hollow))
 
 (global-evil-leader-mode)
-(evil-leader/set-leader " ")
+(evil-leader/set-leader ",")
 (setq evil-leader/in-all-states 1)
 
 ; (require 'evil-search-highlight-persist)
@@ -58,33 +59,7 @@
 (custom-set-variables
  '(initial-frame-alist (quote ((fullscreen . maximized))))) ;; start maximized
 
-; dhtn
-(define-key evil-normal-state-map "d" 'evil-backward-char)
-(define-key evil-normal-state-map "D" 'evil-delete-line)
-(define-key evil-normal-state-map "h" 'evil-next-line)
-(define-key evil-normal-state-map "t" 'evil-previous-line)
-(define-key evil-normal-state-map "d" 'evil-backward-char)
-
-(define-key evil-motion-state-map "d" 'evil-backward-char)
-(define-key evil-motion-state-map "D" 'evil-window-top)
-(define-key evil-motion-state-map "h" 'evil-next-line)
-(define-key evil-motion-state-map "t" 'evil-previous-line)
-(define-key evil-motion-state-map "n" 'evil-forward-char)
-
-
-(define-key evil-normal-state-map "j" 'evil-delete)
-
-(define-key evil-motion-state-map "l" 'evil-search-next)
-(define-key evil-motion-state-map "L" 'evil-search-previous)
-
-(define-key evil-motion-state-map ";" 'evil-ex)
-
-(define-key evil-motion-state-map "_" 'evil-first-non-blank)
-(define-key evil-motion-state-map "-" 'evil-end-of-line)
-
-(global-set-key (kbd "C-q") 'execute-extended-command)
-
-;; C-c as general purpose escape key sequence.
+; C-c as general purpose escape key sequence.
 ;;
 (defun my-esc (prompt)
 "Functionality for escaping generally.  Includes exiting Evil insert state and C-g binding. "
@@ -126,3 +101,48 @@
 (require 'saveplace)
 
 (add-hook 'emacs-lisp-mode-hook 'evil-paredit-mode)
+
+; dhtn remaps
+(define-key evil-normal-state-map "d" 'evil-backward-char)
+(define-key evil-normal-state-map "D" 'evil-delete-line)
+(define-key evil-normal-state-map "h" 'evil-next-line)
+(define-key evil-normal-state-map "t" 'evil-previous-line)
+(define-key evil-normal-state-map "d" 'evil-backward-char)
+
+(define-key evil-motion-state-map "d" 'evil-backward-char)
+(define-key evil-motion-state-map "h" 'evil-next-line)
+(define-key evil-motion-state-map "t" 'evil-previous-line)
+(define-key evil-motion-state-map "n" 'evil-forward-char)
+
+(define-key evil-window-map "d" 'evil-window-left)
+(define-key evil-window-map "D" 'evil-window-move-far-left)
+(define-key evil-window-map "h" 'evil-window-down)
+(define-key evil-window-map "H" 'evil-window-move-very-bottom)
+(define-key evil-window-map "t" 'evil-window-up)
+(define-key evil-window-map "T" 'evil-window-move-very-top)
+(define-key evil-window-map "n" 'evil-window-right)
+(define-key evil-window-map "N" 'evil-window-move-far-right)
+
+(define-key evil-normal-state-map "j" 'evil-delete)
+
+(define-key evil-motion-state-map "l" 'evil-search-next)
+(define-key evil-motion-state-map "L" 'evil-search-previous)
+
+(define-key evil-motion-state-map ";" 'evil-ex)
+
+(define-key evil-motion-state-map "_" 'evil-first-non-blank)
+(define-key evil-motion-state-map "-" 'evil-end-of-line)
+
+(global-set-key (kbd "C-q") 'execute-extended-command)
+
+(evil-define-key 'normal evil-paredit-mode-map
+  (kbd "j") 'evil-paredit-delete
+  (kbd "d") 'evil-backward-char
+  (kbd "c") 'evil-paredit-change
+  (kbd "y") 'evil-paredit-yank
+  (kbd "D") 'evil-paredit-delete-line
+  (kbd "C") 'evil-paredit-change-line
+  (kbd "S") 'evil-paredit-change-whole-line
+  (kbd "Y") 'evil-paredit-yank-line
+  (kbd "X") 'paredit-backward-delete
+  (kbd "x") 'paredit-forward-delete)
