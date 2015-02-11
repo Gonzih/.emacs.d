@@ -16,10 +16,12 @@
   (package-install package)))
 
 (require-package 'evil)
+(require-package 'helm)
 (require-package 'powerline-evil)
 (require-package 'rainbow-mode)
 (require-package 'rainbow-delimiters)
 (require-package 'clojure-mode)
+(require-package 'color-theme-approximate)
 
 (require 'evil)
 
@@ -41,7 +43,7 @@
 
 (evil-leader/set-key " " 'evil-search-highlight-persist-remove-all)
 
-; (define-key evil-normal-state-map "C-p" 'helm-mini).
+(define-key evil-normal-state-map " " 'helm-mini).
 
 (require 'powerline)
 (powerline-evil-vim-color-theme)
@@ -69,6 +71,8 @@
 (define-key evil-motion-state-map "l" 'evil-search-next)
 (define-key evil-motion-state-map "L" 'evil-search-previous)
 
+(define-key evil-motion-state-map ":" 'evil-ex)
+
 ;; C-c as general purpose escape key sequence.
 ;;
 (defun my-esc (prompt)
@@ -91,3 +95,5 @@
 ;;(set-quit-char (kbd "C-c"))
 
 (load-theme 'misterioso t)
+
+(color-theme-approximate-on)
