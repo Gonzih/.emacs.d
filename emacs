@@ -16,6 +16,8 @@
   (package-install package)))
 
 (require-package 'evil)
+(require-package 'paredit)
+(require-package 'evil-paredit)
 (require-package 'helm)
 (require-package 'powerline-evil)
 (require-package 'rainbow-delimiters)
@@ -116,7 +118,10 @@
 
 (require 'rainbow-delimiters)
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
+(add-hook 'prog-mode-hook #'linum-mode)
 
 (setq save-place-file "~/.emacs.d/saveplace")
 (setq-default save-place t)
 (require 'saveplace)
+
+(add-hook 'emacs-lisp-mode-hook 'evil-paredit-mode)
