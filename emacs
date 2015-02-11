@@ -18,16 +18,17 @@
 (require-package 'evil)
 (require-package 'helm)
 (require-package 'powerline-evil)
-(require-package 'rainbow-mode)
 (require-package 'rainbow-delimiters)
 (require-package 'clojure-mode)
 (require-package 'color-theme-approximate)
 (require-package 'ruby-mode)
 (require-package 'clojure-mode)
+(require-package 'autopair)
 
 (require 'evil)
-
 (evil-mode 1)
+
+(helm-mode 1)
 
 (setq evil-emacs-state-cursor '("red" box))
 (setq evil-normal-state-cursor '("green" box))
@@ -109,3 +110,13 @@
 (tool-bar-mode -1)
 (menu-bar-mode -99)
 (scroll-bar-mode -1)
+
+(require 'autopair)
+(autopair-global-mode)
+
+(require 'rainbow-delimiters)
+(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
+
+(setq save-place-file "~/.emacs.d/saveplace")
+(setq-default save-place t)
+(require 'saveplace)
