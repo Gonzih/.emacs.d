@@ -93,6 +93,7 @@
 
 (require 'autopair)
 (autopair-global-mode)
+(show-paren-mode t)
 
 (require 'rainbow-delimiters)
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
