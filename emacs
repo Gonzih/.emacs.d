@@ -71,7 +71,7 @@
 (define-key evil-motion-state-map "l" 'evil-search-next)
 (define-key evil-motion-state-map "L" 'evil-search-previous)
 
-(define-key evil-motion-state-map ":" 'evil-ex)
+(define-key evil-motion-state-map ";" 'evil-ex)
 
 (define-key evil-motion-state-map "_" 'evil-first-non-blank)
 (define-key evil-motion-state-map "-" 'evil-end-of-line)
