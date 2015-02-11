@@ -28,6 +28,8 @@
 (require-package 'autopair)
 (require-package 'gruvbox-theme)
 (require-package 'evil-nerd-commenter)
+(require-package 'projectile)
+(require-package 'helm-projectile)
 
 (require 'evil)
 (evil-mode 1)
@@ -148,3 +150,9 @@
   (kbd "x") 'paredit-forward-delete)
 
 (define-key evil-normal-state-map "gcc" 'evilnc-comment-or-uncomment-lines)
+
+(projectile-global-mode)
+(setq projectile-completion-system 'helm)
+(helm-projectile-on)
+
+(evil-leader/set-key "p" 'helm-projectile-find-file)
