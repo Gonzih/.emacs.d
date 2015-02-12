@@ -174,6 +174,10 @@
 (define-key evil-window-map "-" 'split-window-vertically)
 (define-key evil-window-map "\\" 'split-window-horizontally)
 
+(define-key evil-normal-state-map "u" 'undo-tree-undo)
+(define-key evil-normal-state-map "\C-r" 'undo-tree-redo)
+
 (defun set-lein-repl ()
   (setq inferior-lisp-program "lein repl"))
 (add-hook 'clojure-mode 'set-lein-repl)
+(setq inferior-lisp-program "./run-repl.sh")
