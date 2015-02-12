@@ -166,7 +166,7 @@
 (define-key evil-normal-state-map (kbd "C-t") 'evil-prev-buffer)
 
 (define-key evil-window-map "-" 'split-window-vertically)
-(define-key evil-window-map "\\" 'split-window-vertically)
+(define-key evil-window-map "\\" 'split-window-horizontally)
 
 (defun set-lein-repl ()
   (setq inferior-lisp-program "lein repl"))
