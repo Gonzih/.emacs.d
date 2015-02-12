@@ -91,7 +91,8 @@
 (scroll-bar-mode -1)
 
 (require 'autopair)
-(autopair-global-mode)
+(add-hook 'ruby-mode 'autopair-mode)
+
 (show-paren-mode t)
 
 (require 'rainbow-delimiters)
@@ -164,6 +165,11 @@
 
 (define-key evil-normal-state-map (kbd "C-h") 'evil-next-buffer)
 (define-key evil-normal-state-map (kbd "C-t") 'evil-prev-buffer)
+
+(evil-leader/set-key "S" 'paredit-splice-sexp)
+(evil-leader/set-key "W" 'paredit-wrap-round)
+(evil-leader/set-key ">" 'paredit-forward-slurp-sexp)
+(evil-leader/set-key "<" 'paredit-forward-barf-sexp)
 
 (define-key evil-window-map "-" 'split-window-vertically)
 (define-key evil-window-map "\\" 'split-window-horizontally)
