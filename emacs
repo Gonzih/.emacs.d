@@ -185,3 +185,6 @@
   (setq inferior-lisp-program "lein repl"))
 (add-hook 'clojure-mode 'set-lein-repl)
 (setq inferior-lisp-program "./run-repl.sh")
+
+; Don't generate backups
+(setq make-backup-files nil)
