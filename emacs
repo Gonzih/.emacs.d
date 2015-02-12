@@ -30,6 +30,7 @@
 (require-package 'projectile)
 (require-package 'helm-projectile)
 (require-package 'helm-ag)
+(require-package 'web-mode)
 
 (require 'evil)
 (evil-mode 1)
@@ -161,8 +162,9 @@
 (helm-projectile-on)
 
 (evil-leader/set-key "p" 'helm-projectile-find-file)
-(evil-leader/set-key "-" 'dired)
+(evil-leader/set-key "-" 'helm-find-files)
 (evil-leader/set-key "e" 'lisp-eval-defun)
+(evil-leader/set-key "b" 'helm-buffers-list)
 
 (require 'helm-ag)
 (evil-leader/set-key "/" 'helm-ag)
@@ -189,3 +191,6 @@
 
 ; Don't generate backups
 (setq make-backup-files nil)
+
+(require 'web-mode)
+(add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
