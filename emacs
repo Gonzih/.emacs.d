@@ -29,6 +29,7 @@
 (require-package 'evil-nerd-commenter)
 (require-package 'projectile)
 (require-package 'helm-projectile)
+(require-package 'helm-ag)
 
 (require 'evil)
 (evil-mode 1)
@@ -162,6 +163,9 @@
 (evil-leader/set-key "p" 'helm-projectile-find-file)
 (evil-leader/set-key "-" 'dired)
 (evil-leader/set-key "e" 'lisp-eval-defun)
+
+(require 'helm-ag)
+(evil-leader/set-key "/" 'helm-ag)
 
 (define-key evil-normal-state-map (kbd "C-h") 'evil-next-buffer)
 (define-key evil-normal-state-map (kbd "C-t") 'evil-prev-buffer)
