@@ -176,4 +176,4 @@
 
 (defun set-lein-repl ()
   (setq inferior-lisp-program "lein repl"))
-(add-hook 'emacs-lisp-mode-hook 'set-lein-repl)
+(add-hook 'clojure-mode 'set-lein-repl)
