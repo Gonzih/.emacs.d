@@ -16,6 +16,7 @@
   (package-install package)))
 
 (require-package 'evil)
+(require-package 'evil-leader)
 (require-package 'paredit)
 (require-package 'evil-paredit)
 (require-package 'helm)
@@ -33,6 +34,7 @@
 (require-package 'web-mode)
 
 (require 'evil)
+(require 'evil-leader)
 (evil-mode 1)
 
 (helm-mode 1)
