@@ -32,6 +32,9 @@
 (require-package 'helm-projectile)
 (require-package 'helm-ag)
 (require-package 'web-mode)
+(require-package 'git-gutter+)
+(require-package 'fringe-helper)
+(require-package 'git-gutter-fringe+)
 
 (require 'evil)
 (require 'evil-leader)
@@ -196,3 +199,7 @@
 
 (require 'web-mode)
 (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
+
+(require 'git-gutter+)
+(global-git-gutter+-mode t)
+(require 'git-gutter-fringe+)
