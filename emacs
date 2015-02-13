@@ -138,6 +138,8 @@
 
 (define-key evil-normal-state-map "j" 'evil-delete)
 
+(define-key evil-motion-state-map "j" 'evil-delete)
+
 (define-key evil-motion-state-map "l" 'evil-search-next)
 (define-key evil-motion-state-map "L" 'evil-search-previous)
 
