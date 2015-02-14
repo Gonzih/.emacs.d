@@ -132,3 +132,5 @@
 (require 'git-gutter-fringe+)
 
 (require 'evil-dvp)
+
+(set-default-font "Inconsolata for Powerline-12")
