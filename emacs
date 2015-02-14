@@ -17,6 +17,7 @@
 
 (require-package 'evil)
 (require-package 'evil-leader)
+(require-package 'evil-tabs)
 (require-package 'paredit)
 (require-package 'evil-paredit)
 (require-package 'helm)
@@ -38,7 +39,9 @@
 
 (require 'evil)
 (require 'evil-leader)
+(require 'evil-tabs)
 (evil-mode 1)
+(global-evil-tabs-mode t)
 
 (helm-mode 1)
 
