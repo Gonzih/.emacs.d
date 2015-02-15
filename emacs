@@ -36,6 +36,7 @@
 (require-package 'git-gutter+)
 (require-package 'fringe-helper)
 (require-package 'git-gutter-fringe+)
+(require-package 'inf-clojure)
 
 (require 'evil)
 (require 'evil-leader)
@@ -115,11 +116,7 @@
 
 (add-hook 'emacs-lisp-mode-hook 'evil-paredit-mode)
 
-(defun set-lein-repl ()
-  (setq inferior-lisp-program "lein repl"))
-(add-hook 'clojure-mode 'set-lein-repl)
-
-(setq inferior-lisp-program "lein repl")
+(setq inferior-lisp-program "./run-repl.sh")
 
 ; Don't generate backups
 (setq make-backup-files nil)
@@ -134,3 +131,13 @@
 (require 'evil-dvp)
 
 (set-default-font "Inconsolata for Powerline-12")
+
+(add-hook 'clojure-mode-hook #'inf-clojure-minor-mode)
+
+;; (defun set-lein-repl () (setq inferior-lisp-program "lein repl"))
+;; (add-hook 'clojure-mode 'set-lein-repl)
+
+;; (evil-leader/set-key "e" 'lisp-eval-defun)
+(evil-leader/set-key "e" 'inf-clojure-eval-defun-and-go)
+
+(add-hook 'clojure-mode 'set-inf-clojure-keys)

@@ -55,7 +55,6 @@
 
 (evil-leader/set-key "p" 'helm-projectile-find-file)
 (evil-leader/set-key "-" 'helm-find-files)
-(evil-leader/set-key "e" 'lisp-eval-defun)
 (evil-leader/set-key "b" 'helm-buffers-list)
 
 (require 'helm-ag)
