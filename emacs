@@ -138,6 +138,6 @@
 ;; (add-hook 'clojure-mode 'set-lein-repl)
 
 ;; (evil-leader/set-key "e" 'lisp-eval-defun)
-(evil-leader/set-key "e" 'inf-clojure-eval-defun-and-go)
+(evil-leader/set-key "e" 'inf-clojure-eval-defun)
 
 (add-hook 'clojure-mode 'set-inf-clojure-keys)
